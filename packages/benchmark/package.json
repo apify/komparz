@@ -1,0 +1,13 @@
+{
+    "name": "my-actor",
+    "version": "0.0.1",
+    "dependencies": {
+        "apify": "^1.0.2",
+        "pseudo-random-buffer": "^1.0.0",
+        "underscore": "^1.12.1"
+    },
+    "scripts": {
+        "start": "node main.js"
+    },
+    "author": "Me!"
+}

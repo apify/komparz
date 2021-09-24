@@ -1,0 +1,9 @@
+{
+  "name": "komparz",
+  "scripts": {
+    "update-packages-metadata": "TODO"
+  },
+  "dependencies": {
+    "apify-cli": "^0.6.2"
+  }
+}

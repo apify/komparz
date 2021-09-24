@@ -1,0 +1,17 @@
+{
+	"name": "multifile-demo",
+	"version": "1.0.0",
+	"description": "Multifile demo",
+	"dependencies": {
+		"apify": "^1.3.0"
+	},
+	"devDependencies": {
+		"@apify/eslint-config": "^0.1.3",
+		"eslint": "^7.23.0"
+	},
+	"scripts": {
+		"start": "node src/main.js"
+	},
+	"author": "Pavel 'Strajk' Dolecek",
+	"license": "ISC"
+}
