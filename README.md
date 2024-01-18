@@ -2,10 +2,6 @@
 
 > Special, yet insignificant actors
 
-👀 See [`/packages` folder](./packages)
-
-🚨 Work in progress, contact @pavel in case of questions
-
 **Example actors** of various characterictics to test the whole Apify platform, for example:
 
 - Benchmark platform
@@ -14,8 +10,19 @@
 - Test edge cases – timeout, memory leaks, over-flows
 - Battle test Input UI
 
-## Development
+🚨 Work in progress, contact @valekjo in case of questions
 
-```
-npm i -g zx
-```
+### Honorable mention
+
+Special kudos to [@Strajk](https://github.com/strajk) who started this and came up with the name!
+
+## Actual README
+
+👀 See [`/packages` folder](./packages)
+
+### When adding new Actors, keep in mind
+
+ - descriptive names
+ - fast builds
+
+

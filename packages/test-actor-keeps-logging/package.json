@@ -1,0 +1,21 @@
+{
+	"name": "test-actor-keeps-logging",
+	"version": "0.0.1",
+	"type": "module",
+	"description": "This is an example of an Apify actor.",
+	"engines": {
+		"bun": ">=1.0.0"
+	},
+	"dependencies": {
+		"apify": "^3.1.10"
+	},
+	"devDependencies": {
+		"@apify/tsconfig": "^0.1.0"
+	},
+	"scripts": {
+		"start": "bun src/main.ts",
+		"test": "echo \"Error: oops, the actor has no tests yet, sad!\" && exit 1"
+	},
+	"author": "It's not you it's me",
+	"license": "ISC"
+}
