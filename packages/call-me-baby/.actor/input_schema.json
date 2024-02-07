@@ -1,0 +1,20 @@
+{
+    "title": "Call another Actor",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "actorId": {
+            "title": "ID of Actor to call",
+            "type": "string",
+            "description": "ID of Actor to call",
+            "editor": "textfield"
+        },
+        "actorInput": {
+            "title": "Input to be passed to actor",
+            "type": "object",
+            "editor": "json",
+            "description": "Input to be passed to actor"
+        }
+    },
+    "required": ["actorId"]
+}
