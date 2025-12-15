@@ -1,0 +1,53 @@
+{
+	"$schema": "https://apify.com/schemas/v1/actor.json",
+	"actorSpecification": 1,
+	"name": "kvs-collections-output",
+	"title": "Empty JavaScript project",
+	"description": "Empty project in JavaScript.",
+	"version": "0.0",
+	"buildTag": "latest",
+	"meta": {
+		"templateId": "js-empty",
+		"generatedBy": "<FILL-IN-MODEL>"
+	},
+	"dockerfile": "../Dockerfile",
+	"storages": {
+		"keyValueStore": {
+			"actorKeyValueStoreSchemaVersion": 1,
+			"title": "Key value store schema with collections",
+			"collections": {
+				"mainOutput": {
+					"key": "OUTPUT.json"
+				},
+				"htmlOutput": {
+					"key": "OUTPUT.html"
+				},
+				"records": {
+					"keyPrefix": "record-"
+				}
+			}
+		}
+	},
+	"output": {
+		"actorOutputSchemaVersion": 1,
+		"title": "Output",
+		"properties": {
+			"kvsMainOutput": {
+				"type": "string",
+				"template": "{{links.apiDefaultKeyValueStoreUrl}}/keys?collection=mainOutput"
+			},
+			"kvsHTMLOutput": {
+				"type": "string",
+				"template": "{{links.apiDefaultKeyValueStoreUrl}}/keys?collection=htmlOutput"
+			},
+			"kvsRecords": {
+				"type": "string",
+				"template": "{{links.apiDefaultKeyValueStoreUrl}}/keys?collection=records"
+			},
+			"kvsOutputs": {
+				"type": "string",
+				"template": "{{links.apiDefaultKeyValueStoreUrl}}/keys?prefix=OUTPUT"
+			}
+		}
+	}
+}
