@@ -1,0 +1,71 @@
+{
+	"actorSpecification": 1,
+	"name": "multiple-datasets",
+	"title": "Actor with multiple datasets",
+	"description": "Actor that demonstrates the use of multiple datasets.",
+	"version": "0.0",
+	"buildTag": "latest",
+	"meta": {
+		"templateId": "js-empty",
+		"generatedBy": "<FILL-IN-MODEL>"
+	},
+	"dockerfile": "../Dockerfile",
+	"storages": {
+		"datasets": {
+			"products": {
+				"actorSpecification": 1,
+				"title": "Products",
+				"description": "Products",
+				"fields": {
+					"properties": {
+						"id": { "type": "string" },
+						"title": { "type": "string" },
+						"url": { "type": "string" },
+						"rating": { "type": "number" },
+						"categoryId": { "type": "string" }
+					}
+				},
+				"views": {
+					"overview": {
+						"title": "Overview",
+						"transformation": {
+							"fields": [ "id", "title", "url", "rating", "categoryId" ]
+						}
+					},
+					"productList": {
+						"title": "Product List",
+						"transformation": {
+							"fields": [ "id", "title", "rating" ]
+						}
+					}
+				}
+			},
+			"categories": {
+				"actorSpecification": 1,
+				"title": "Categories",
+				"description": "Categories",
+				"fields": {
+					"properties": {
+						"id": { "type": "string" },
+						"title": { "type": "string" },
+						"url": { "type": "string" }
+					}
+				},
+				"views": {
+					"overview": {
+						"title": "Overview",
+						"transformation": {
+							"fields": [ "id", "title", "url" ]
+						}
+					},
+					"categoryList": {
+						"title": "Category List",
+						"transformation": {
+							"fields": [ "title" ]
+						}
+					}
+				}
+			}
+		}
+	}
+}
