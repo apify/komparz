@@ -1,0 +1,90 @@
+{
+	"actorSpecification": 1,
+	"name": "mutliple-datasets",
+	"title": "Actor with multiple datasets",
+	"description": "Actor that demonstrates the use of multiple datasets.",
+	"version": "0.0",
+	"buildTag": "latest",
+	"meta": {
+		"templateId": "js-empty",
+		"generatedBy": "<FILL-IN-MODEL>"
+	},
+	"dockerfile": "../Dockerfile",
+	"storages": {
+		"datasets": {
+			"products": {
+				"actorSpecification": 1,
+				"title": "Products",
+				"description": "Products",
+				"fields": {
+					"properties": {
+						"id": { "type": "string" },
+						"title": { "type": "string" },
+						"url": { "type": "string" },
+						"rating": { "type": "number" },
+						"categoryId": { "type": "string" }
+					}
+				},
+				"views": {
+					"overview": {
+						"title": "Overview",
+						"display": {
+							"component": "table",
+							"properties": {
+								"id": { "label": "ID", "format": "text" },
+								"title": { "label": "Title", "format": "text" },
+								"url": { "label": "URL", "format": "link" },
+								"rating": {"label": "Rating", "format": "number" }
+							}
+						}
+					},
+					"productList": {
+						"title": "Product List",
+						"display": {
+							"component": "table",
+							"properties": {
+								"id": { "label": "ID", "format": "text" },
+								"title": { "label": "Title", "format": "text" },
+								"rating": {"label": "Rating", "format": "number" }
+							}
+						}
+					}
+				}
+			},
+			"categories": {
+				"actorSpecification": 1,
+				"title": "Categories",
+				"description": "Categories",
+				"fields": {
+					"properties": {
+						"id": { "type": "string" },
+						"title": { "type": "string" },
+						"url": { "type": "string" }
+					}
+				},
+				"views": {
+					"overview": {
+						"title": "Overview",
+						"display": {
+							"component": "table",
+							"properties": {
+								"id": { "label": "ID", "format": "text" },
+								"title": { "label": "Title", "format": "text" },
+								"url": { "label": "URL", "format": "link" }
+							}
+						}
+					},
+					"categoryList": {
+						"title": "Category List",
+						"display": {
+							"component": "table",
+							"properties": {
+								"title": { "label": "Title", "format": "text" }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
