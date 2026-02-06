@@ -1,6 +1,6 @@
 {
 	"actorSpecification": 1,
-	"name": "mutliple-datasets",
+	"name": "multiple-datasets",
 	"title": "Actor with multiple datasets",
 	"description": "Actor that demonstrates the use of multiple datasets.",
 	"version": "0.0",
@@ -28,25 +28,14 @@
 				"views": {
 					"overview": {
 						"title": "Overview",
-						"display": {
-							"component": "table",
-							"properties": {
-								"id": { "label": "ID", "format": "text" },
-								"title": { "label": "Title", "format": "text" },
-								"url": { "label": "URL", "format": "link" },
-								"rating": {"label": "Rating", "format": "number" }
-							}
+						"transformation": {
+							"fields": [ "id", "title", "url", "rating", "categoryId" ]
 						}
 					},
 					"productList": {
 						"title": "Product List",
-						"display": {
-							"component": "table",
-							"properties": {
-								"id": { "label": "ID", "format": "text" },
-								"title": { "label": "Title", "format": "text" },
-								"rating": {"label": "Rating", "format": "number" }
-							}
+						"transformation": {
+							"fields": [ "id", "title", "rating" ]
 						}
 					}
 				}
@@ -65,22 +54,14 @@
 				"views": {
 					"overview": {
 						"title": "Overview",
-						"display": {
-							"component": "table",
-							"properties": {
-								"id": { "label": "ID", "format": "text" },
-								"title": { "label": "Title", "format": "text" },
-								"url": { "label": "URL", "format": "link" }
-							}
+						"transformation": {
+							"fields": [ "id", "title", "url" ]
 						}
 					},
 					"categoryList": {
 						"title": "Category List",
-						"display": {
-							"component": "table",
-							"properties": {
-								"title": { "label": "Title", "format": "text" }
-							}
+						"transformation": {
+							"fields": [ "title" ]
 						}
 					}
 				}
