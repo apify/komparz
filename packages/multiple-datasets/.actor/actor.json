@@ -12,7 +12,7 @@
 	"dockerfile": "../Dockerfile",
 	"storages": {
 		"datasets": {
-			"products": {
+			"default": {
 				"actorSpecification": 1,
 				"title": "Products",
 				"description": "Products",
