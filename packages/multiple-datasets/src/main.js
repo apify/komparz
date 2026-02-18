@@ -4,7 +4,7 @@ await Actor.init();
 
 log.info('Hello from the Actor!');
 
-const storageIds = JSON.parse(process.env.ACTOR_STORAGE_IDS);
+const storageIds = JSON.parse(process.env.ACTOR_STORAGES_JSON);
 
 log.info('Storages', storageIds);
 
