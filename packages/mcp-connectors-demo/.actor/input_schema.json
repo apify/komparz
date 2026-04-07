@@ -1,0 +1,40 @@
+{
+    "title": "MCP Proxy Demo — Scrape & Export",
+    "description": "Scrapes a website via Apify MCP Server through the MCP Proxy. Optionally exports the scraped markdown to a Notion page via a Notion MCP Server.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "apifyMcpConnector": {
+            "title": "Apify MCP Connector",
+            "description": "Connector to the Apify MCP Server (for running Actors and fetching datasets)",
+            "type": "string",
+            "resourceType": "mcpConnector",
+            "mcpServers": [
+                { "url": "https://mcp.apify.com", "tools": { "required": ["call-actor", "get-actor-output"]} }
+            ]
+        },
+        "url": {
+            "title": "URL to crawl",
+            "description": "The URL to scrape content from",
+            "type": "string",
+            "editor": "textfield",
+            "prefill": "https://docs.apify.com/academy/getting-started"
+        },
+        "notionMcpConnector": {
+            "title": "Notion MCP Connector (optional)",
+            "description": "Connector to a Notion MCP Server. If set together with Notion Page ID, scraped content will be exported to Notion.",
+            "type": "string",
+            "resourceType": "mcpConnector",
+            "mcpServers": [
+                { "url": "*notion*" }
+            ]
+        },
+        "notionPageId": {
+            "title": "Notion Page ID (optional)",
+            "description": "The ID of the Notion page where scraped results will be appended as markdown blocks",
+            "type": "string",
+            "editor": "textfield"
+        }
+    },
+    "required": ["apifyMcpConnector", "url"]
+}
