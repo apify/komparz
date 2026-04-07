@@ -1,0 +1,15 @@
+{
+    "$schema": "https://apify.com/schemas/v1/actor.ide.json",
+    "actorSpecification": 1,
+    "name": "mcp-connectors-demo",
+    "title": "MCP Connectors Demo",
+    "description": "Actor for testing MCP Connectors capabilities",
+    "version": "0.0",
+    "buildTag": "latest",
+    "meta": {
+        "templateId": "ts-empty",
+        "generatedBy": "<FILL-IN-MODEL>"
+    },
+    "dockerfile": "../Dockerfile",
+    "input": "./input_schema.json"
+}

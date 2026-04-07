@@ -1,0 +1,23 @@
+{
+    "name": "ts-empty",
+    "version": "0.0.1",
+    "type": "module",
+    "description": "This is an example of an Apify Actor.",
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "dependencies": {
+        "apify": "^3.7.0",
+        "@modelcontextprotocol/sdk": "^1.28.0",
+        "zod": "^4.3.6",
+        "tsx": "^4.20.3",
+        "@apify/tsconfig": "^0.1.1",
+        "@types/node": "^24.0.0",
+        "globals": "^17.0.0"
+    },
+    "scripts": {
+        "start": "tsx src/main.ts"
+    },
+    "author": "It's not you it's me",
+    "license": "ISC"
+}
