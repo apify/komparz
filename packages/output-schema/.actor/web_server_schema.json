@@ -1,0 +1,51 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Live view",
+        "version": "1.0.0",
+        "description": "Container web server exposed while the Actor is running. Renders the current server time and exposes an endpoint to stop the Actor."
+    },
+    "paths": {
+        "/": {
+            "get": {
+                "summary": "Current time page",
+                "description": "Returns an HTML page showing the server's current time, centered on the screen. The page refreshes itself every second via `<meta http-equiv=\"refresh\">` and contains a button that POSTs to `/exit`.",
+                "responses": {
+                    "200": {
+                        "description": "HTML page with the current time and a Stop button.",
+                        "content": {
+                            "text/html": {
+                                "schema": { "type": "string" }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/exit": {
+            "post": {
+                "summary": "Stop the Actor",
+                "description": "Signals the Actor to call `Actor.exit()` and shut down the container. Responds immediately with `{ \"status\": \"exiting\" }`; the exit happens asynchronously a fraction of a second later, after the response is flushed.",
+                "responses": {
+                    "200": {
+                        "description": "Exit request accepted.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "required": ["status"],
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "enum": ["exiting"]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

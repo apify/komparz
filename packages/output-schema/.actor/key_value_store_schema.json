@@ -25,6 +25,12 @@
             "description": "Photos stored by the Actor.",
             "keyPrefix": "photo-",
             "contentTypes": ["image/jpeg"]
+        },
+        "archives": {
+            "title": "Archives",
+            "description": "Binary archives (zip) — browsers download these instead of rendering them.",
+            "keyPrefix": "archive-",
+            "contentTypes": ["application/zip"]
         }
     }
 }
