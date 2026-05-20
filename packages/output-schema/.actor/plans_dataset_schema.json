@@ -1,7 +1,7 @@
 {
     "actorSpecification": 1,
     "fields": {
-        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
         "required": ["id", "title", "score", "coverImage"],
         "properties": {
