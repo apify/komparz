@@ -1,0 +1,22 @@
+{
+    "$schema": "https://apify.com/schemas/v1/actor.ide.json",
+    "actorSpecification": 1,
+    "name": "output-schema",
+    "title": "Empty TypeScript project",
+    "description": "Empty project in TypeScript.",
+    "version": "0.0",
+    "buildTag": "latest",
+    "meta": {
+        "templateId": "ts-empty",
+        "generatedBy": "Claude Code with Claude Opus 4.7"
+    },
+    "dockerfile": "../Dockerfile",
+    "output": "./output_schema.json",
+    "storages": {
+        "keyValueStore": "./key_value_store_schema.json",
+        "datasets": {
+            "default": "./plans_dataset_schema.json",
+            "ideas": "./ideas_dataset_schema.json"
+        }
+    }
+}

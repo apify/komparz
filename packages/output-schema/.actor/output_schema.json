@@ -1,0 +1,31 @@
+{
+    "actorOutputSchemaVersion": 1,
+    "title": "Output schema of the example Actor",
+    "properties": {
+        "plans": {
+            "type": "string",
+            "title": "Plans",
+            "template": "{{storages.datasets.default.apiUrl}}/items"
+        },
+        "ideas": {
+            "type": "string",
+            "title": "Ideas",
+            "template": "{{storages.datasets.ideas.apiUrl}}/items"
+        },
+        "plan_files": {
+            "type": "string",
+            "title": "Plan files",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/keys?collection=plans"
+        },
+        "screenshots": {
+            "type": "string",
+            "title": "Screenshots",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/keys?collection=screenshots"
+        },
+        "allFiles": {
+            "type": "string",
+            "title": "All files",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/keys"
+        }
+    }
+}
