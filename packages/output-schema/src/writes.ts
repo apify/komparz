@@ -101,7 +101,7 @@ export const pushDatasets = async (): Promise<void> => {
     log.info(`Pushed ${planItems.length} items into the default (plans) dataset.`);
 
     // Named ideas dataset — no schema, so items can carry a few extra fields each.
-    const ideasDataset = await Actor.openDataset({ alias: "categories" });
+    const ideasDataset = await Actor.openDataset({ alias: "ideas" });
     const ideaItems = Array.from({ length: 8 }, (_, idx) => {
         const i = idx + 1;
         const topic = TOPICS[i % TOPICS.length];
