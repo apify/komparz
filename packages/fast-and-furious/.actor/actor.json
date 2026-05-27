@@ -1,8 +1,8 @@
 {
 	"actorSpecification": 1,
-	"name": "multiple-datasets-alpine",
-	"title": "Actor with multiple datasets",
-	"description": "Actor that demonstrates the use of multiple datasets.",
+	"name": "fast-and-furious-alpine",
+	"title": "Actor that builds and runs very fast",
+	"description": "Actor that builds and runs very fast. Ideal for quick runs",
 	"version": "0.0",
 	"buildTag": "latest",
 	"meta": {
