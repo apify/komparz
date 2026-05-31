@@ -1,0 +1,38 @@
+{
+    "name": "output-schema",
+    "version": "0.0.1",
+    "type": "module",
+    "description": "Example Actor showcasing output schema",
+    "engines": {
+        "node": ">=24.0.0"
+    },
+    "packageManager": "pnpm@11.1.2",
+    "scripts": {
+        "preinstall": "npx only-allow pnpm",
+        "start": "pnpm run start:dev",
+        "start:prod": "node dist/main.js",
+        "start:dev": "tsx src/main.ts",
+        "build": "tsc",
+        "lint": "oxlint --type-aware .",
+        "lint:fix": "oxlint --type-aware --fix .",
+        "format": "oxfmt",
+        "format:check": "oxfmt --check"
+    },
+    "dependencies": {
+        "apify": "^3.7.0",
+        "jszip": "^3.10.1",
+        "sharp": "^0.34.5"
+    },
+    "devDependencies": {
+        "@apify/oxlint-config": "^0.2.9",
+        "@apify/tsconfig": "^0.1.2",
+        "@types/node": "^24.0.0",
+        "oxfmt": "0.48.0",
+        "oxlint": "1.63.0",
+        "oxlint-tsgolint": "0.22.1",
+        "tsx": "^4.20.3",
+        "typescript": "^6.0.0"
+    },
+    "author": "Jaroslav Hejlek",
+    "license": "ISC"
+}

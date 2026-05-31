@@ -1,0 +1,36 @@
+{
+    "actorKeyValueStoreSchemaVersion": 1,
+    "title": "Key-value store schema example",
+    "collections": {
+        "ideas": {
+            "title": "Ideas",
+            "description": "Ideas stored by the Actor.",
+            "keyPrefix": "idea-",
+            "contentTypes": ["application/json", "text/markdown"]
+        },
+        "plans": {
+            "title": "Plans",
+            "description": "Plans stored by the Actor.",
+            "keyPrefix": "plan-",
+            "contentTypes": ["application/json", "text/markdown", "text/html", "text/plain"]
+        },
+        "screenshots": {
+            "title": "Screenshots",
+            "description": "Screenshots stored by the Actor.",
+            "keyPrefix": "screenshot-",
+            "contentTypes": ["image/png"]
+        },
+        "photos": {
+            "title": "Photos",
+            "description": "Photos stored by the Actor.",
+            "keyPrefix": "photo-",
+            "contentTypes": ["image/jpeg"]
+        },
+        "archives": {
+            "title": "Archives",
+            "description": "Binary archives (zip) — browsers download these instead of rendering them.",
+            "keyPrefix": "archive-",
+            "contentTypes": ["application/zip"]
+        }
+    }
+}

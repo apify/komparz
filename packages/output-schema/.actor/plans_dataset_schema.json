@@ -1,0 +1,146 @@
+{
+    "actorSpecification": 1,
+    "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "required": ["id", "title", "score", "coverImage"],
+        "properties": {
+            "id": {
+                "type": "string",
+                "description": "Unique plan identifier."
+            },
+            "title": {
+                "type": "string",
+                "description": "Human-readable plan title."
+            },
+            "score": {
+                "type": "number",
+                "description": "Numeric score, 0–100.",
+                "minimum": 0,
+                "maximum": 100
+            },
+            "published": {
+                "type": "boolean",
+                "description": "Whether the plan is published."
+            },
+            "createdAt": {
+                "type": "string",
+                "format": "date-time",
+                "description": "ISO 8601 timestamp."
+            },
+            "homepageUrl": {
+                "type": "string",
+                "format": "uri",
+                "description": "External link to the plan's homepage."
+            },
+            "coverImage": {
+                "type": "string",
+                "format": "uri",
+                "description": "Image URL — points to a PNG screenshot in the key-value store."
+            },
+            "tags": {
+                "type": "array",
+                "description": "List of free-form tags.",
+                "items": { "type": "string" }
+            },
+            "metadata": {
+                "type": "object",
+                "description": "Free-form metadata object."
+            },
+            "relatedPlanUrl": {
+                "type": "string",
+                "format": "uri",
+                "description": "Link to a related markdown plan record in the key-value store."
+            },
+            "attachments": {
+                "type": "array",
+                "description": "Photos attached to the plan — unwound in the Photos view.",
+                "items": {
+                    "type": "object",
+                    "required": ["imageUrl"],
+                    "properties": {
+                        "imageUrl": {
+                            "type": "string",
+                            "format": "uri",
+                            "description": "JPEG photo URL in the key-value store."
+                        },
+                        "caption": {
+                            "type": "string",
+                            "description": "Caption for the photo."
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "views": {
+        "overview": {
+            "title": "Overview",
+            "description": "Summary table with the most important fields.",
+            "transformation": {
+                "fields": ["coverImage", "title", "score", "published", "createdAt"]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "coverImage": { "label": "Cover", "format": "image" },
+                    "title": { "label": "Title", "format": "text" },
+                    "score": { "label": "Score", "format": "number" },
+                    "published": { "label": "Published", "format": "boolean" },
+                    "createdAt": { "label": "Created", "format": "date" }
+                }
+            }
+        },
+        "details": {
+            "title": "Details",
+            "description": "All plan fields, one row per item.",
+            "transformation": {
+                "fields": [
+                    "id",
+                    "title",
+                    "score",
+                    "createdAt",
+                    "homepageUrl",
+                    "published",
+                    "coverImage",
+                    "tags",
+                    "metadata",
+                    "relatedPlanUrl",
+                    "attachments"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "id": { "label": "ID", "format": "text" },
+                    "title": { "label": "Title", "format": "text" },
+                    "score": { "label": "Score", "format": "number" },
+                    "createdAt": { "label": "Created", "format": "date" },
+                    "homepageUrl": { "label": "Homepage", "format": "link" },
+                    "published": { "label": "Published", "format": "boolean" },
+                    "coverImage": { "label": "Cover", "format": "image" },
+                    "tags": { "label": "Tags", "format": "array" },
+                    "metadata": { "label": "Metadata", "format": "object" },
+                    "relatedPlanUrl": { "label": "Related plan", "format": "link" },
+                    "attachments": { "label": "Attachments", "format": "array" }
+                }
+            }
+        },
+        "photos": {
+            "title": "Photos",
+            "description": "One row per attachment — uses unwind on the attachments array.",
+            "transformation": {
+                "fields": ["title", "imageUrl", "caption"],
+                "unwind": ["attachments"]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "title": { "label": "Plan", "format": "text" },
+                    "imageUrl": { "label": "Photo", "format": "image" },
+                    "caption": { "label": "Caption", "format": "text" }
+                }
+            }
+        }
+    }
+}

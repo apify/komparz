@@ -1,0 +1,76 @@
+{
+    "actorOutputSchemaVersion": 1,
+    "title": "Output schema of the example Actor",
+    "properties": {
+        "liveView": {
+            "type": "string",
+            "title": "Live view",
+            "template": "{{links.containerRunUrl}}"
+        },
+        "plans": {
+            "type": "string",
+            "title": "Plans (dataset, validated)",
+            "template": "{{storages.datasets.default.apiUrl}}/items"
+        },
+        "ideas": {
+            "type": "string",
+            "title": "Ideas (dataset, no schema)",
+            "template": "{{storages.datasets.ideas.apiUrl}}/items"
+        },
+        "plan_files": {
+            "type": "string",
+            "title": "Plan files (key-value store collection)",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/keys?collection=plans"
+        },
+        "screenshots": {
+            "type": "string",
+            "title": "Screenshots (key-value store collection)",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/keys?collection=screenshots"
+        },
+        "allFiles": {
+            "type": "string",
+            "title": "All files (key-value store)",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/keys"
+        },
+        "sampleJson": {
+            "type": "string",
+            "title": "Sample JSON file",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/plan-json-02.json"
+        },
+        "sampleMarkdown": {
+            "type": "string",
+            "title": "Sample Markdown file",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/idea-12.md"
+        },
+        "sampleHtml": {
+            "type": "string",
+            "title": "Sample HTML file",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/plan-html-01.html"
+        },
+        "sampleText": {
+            "type": "string",
+            "title": "Sample text file",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/plan-txt-01.txt"
+        },
+        "samplePng": {
+            "type": "string",
+            "title": "Sample PNG image",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/screenshot-01.png"
+        },
+        "sampleJpeg": {
+            "type": "string",
+            "title": "Sample JPEG photo",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/photo-01.jpg"
+        },
+        "sampleArchive": {
+            "type": "string",
+            "title": "Sample ZIP archive (binary)",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/archive-01.zip"
+        },
+        "externalLink": {
+            "type": "string",
+            "title": "Example external link",
+            "template": "https://example.com"
+        }
+    }
+}
