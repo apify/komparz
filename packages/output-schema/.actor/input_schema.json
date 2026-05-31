@@ -1,0 +1,26 @@
+{
+    "title": "Output Schema Actor input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "liveViewDelaySecs": {
+            "title": "Live view start delay (seconds)",
+            "type": "integer",
+            "description": "How many seconds to wait after the run starts before the live view becomes available. The Actor still produces its output (key-value files and datasets) immediately — only the live view is delayed. Set to 0 to start the live view right away.",
+            "editor": "number",
+            "unit": "seconds",
+            "default": 0,
+            "minimum": 0
+        },
+        "maxRunTimeSecs": {
+            "title": "Auto-stop timeout (seconds)",
+            "type": "integer",
+            "description": "Maximum total run time in seconds, measured from the start of the run (the live view delay counts towards it). When the limit is reached, the Actor stops itself. Set to 0 (default) to run indefinitely until you press Stop in the live view or abort the run.",
+            "editor": "number",
+            "unit": "seconds",
+            "default": 0,
+            "minimum": 0
+        }
+    },
+    "required": []
+}
