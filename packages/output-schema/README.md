@@ -13,6 +13,17 @@ Start a new [web scraping](https://apify.com/web-scraping) project quickly and e
 
 Insert your own code between `await Actor.init()` and `await Actor.exit()`. If you would like to use the [Crawlee](https://crawlee.dev/) library simply uncomment its import `import { CheerioCrawler } from '@crawlee/cheerio';`.
 
+## Input
+
+The Actor produces its output (key-value files and datasets) immediately, then keeps running so you can open the live view. Two optional fields control its lifecycle:
+
+| Field | Type | Default | Description |
+| --- | --- | --- | --- |
+| `liveViewDelaySecs` | integer (seconds) | `0` | How long to wait after the run starts before the live view becomes available. `0` starts it right away. |
+| `maxRunTimeSecs` | integer (seconds) | `0` | Total run-time cap, measured from run start (the live-view delay counts towards it). The Actor stops itself once reached. `0` runs indefinitely until you press **Stop** in the live view or abort the run. |
+
+Both default to `0`, which preserves the original behavior: the live view starts immediately and the run lives on until you stop it manually.
+
 ## Resources
 
 - [TypeScript vs. JavaScript: which to use for web scraping?](https://blog.apify.com/typescript-vs-javascript-crawler/)
