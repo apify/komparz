@@ -8,7 +8,10 @@
             "title": "MCP Connector",
             "description": "Connector to the MCP server whose tools you want to list",
             "type": "string",
-            "resourceType": "mcpConnector"
+            "resourceType": "mcpConnector",
+            "mcpServers": [
+                { "url": "*" }
+            ]
         }
     },
     "required": ["mcpConnector"]
