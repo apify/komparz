@@ -1,0 +1,40 @@
+{
+    "$schema": "https://apify.com/schemas/v1/actor.ide.json",
+    "actorSpecification": 1,
+    "name": "mcp-list-tools",
+    "title": "MCP List Tools",
+    "description": "Lists all tools available on an MCP connector and saves them to the key-value store",
+    "version": "0.0",
+    "buildTag": "latest",
+    "meta": {
+        "templateId": "ts-empty",
+        "generatedBy": "Claude Code with Claude Sonnet 4.6"
+    },
+    "dockerfile": "../Dockerfile",
+    "input": "./input_schema.json",
+    "output": {
+        "actorOutputSchemaVersion": 1,
+        "title": "MCP tools list",
+        "properties": {
+            "tools": {
+                "type": "string",
+                "title": "Tools",
+                "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/OUTPUT"
+            }
+        }
+    },
+    "storages": {
+        "keyValueStore": {
+            "actorKeyValueStoreSchemaVersion": 1,
+            "title": "MCP List Tools output",
+            "collections": {
+                "output": {
+                    "title": "Output",
+                    "description": "JSON record containing the list of tools available on the MCP connector",
+                    "key": "OUTPUT",
+                    "contentTypes": ["application/json"]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "title": "MCP List Tools",
+    "description": "Lists all tools available on an MCP connector.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "mcpConnector": {
+            "title": "MCP Connector",
+            "description": "Connector to the MCP server whose tools you want to list",
+            "type": "string",
+            "resourceType": "mcpConnector"
+        }
+    },
+    "required": ["mcpConnector"]
+}
