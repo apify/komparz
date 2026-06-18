@@ -33,7 +33,7 @@ const result = {
     tools,
 };
 
-await Actor.setValue('OUTPUT', result, { contentType: 'application/json' });
+await Actor.setValue('OUTPUT', result);
 
 log.info(`Found ${tools.length} tools on connector "${mcpConnector}"`);
 
