@@ -1,6 +1,6 @@
 import { Actor, log } from 'apify';
 
-import { createMcpClient } from './utils.js';
+import { createMcpClient } from './utils.ts';
 
 await Actor.init();
 
